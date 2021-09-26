@@ -121,30 +121,12 @@ workflows:
   version: 2
   Build:
     jobs:
-      - NodeJS 12:
-          <<: *common_non_publish_filters
-      - NodeJS 14:
-          <<: *common_non_publish_filters
-      - NodeJS 16:
-          <<: *common_non_publish_filters
-      - "Check for FIXM\x45"
-      - Prettier
       - oss/lerna_tarballs:
           name: Package tarballs
           <<: *common_non_publish_filters
-          requires:
-            - NodeJS 12
-            - NodeJS 14
-            - NodeJS 16
-            - Prettier
       - oss/dry_run:
           name: Dry-run
           <<: *common_publish_filters
-          requires:
-            - NodeJS 12
-            - NodeJS 14
-            - NodeJS 16
-            - Prettier
       - oss/confirmation:
           name: Confirmation
           type: approval
