@@ -26,15 +26,6 @@ commands:
     description: "Set up Node.js environment and run tests"
     steps:
       - common_node_steps
-      - run:
-          command: npm run test:ci
-          environment:
-            JEST_JUNIT_OUTPUT_DIR: "reports/junit/"
-      - run: npm run coverage:upload
-      - store_test_results:
-          path: reports/junit
-      - store_artifacts:
-          path: reports/junit
 
 # Important! When adding a new job to `jobs`, make sure to define when it
 # executes by also adding it to the `workflows` section below!
@@ -121,12 +112,30 @@ workflows:
   version: 2
   Build:
     jobs:
+      - NodeJS 12:
+          <<: *common_non_publish_filters
+      - NodeJS 14:
+          <<: *common_non_publish_filters
+      - NodeJS 16:
+          <<: *common_non_publish_filters
+      - "Check for FIXM\x45"
+      - Prettier
       - oss/lerna_tarballs:
           name: Package tarballs
           <<: *common_non_publish_filters
+          requires:
+            - NodeJS 12
+            - NodeJS 14
+            - NodeJS 16
+            - Prettier
       - oss/dry_run:
           name: Dry-run
           <<: *common_publish_filters
+          requires:
+            - NodeJS 12
+            - NodeJS 14
+            - NodeJS 16
+            - Prettier
       - oss/confirmation:
           name: Confirmation
           type: approval
