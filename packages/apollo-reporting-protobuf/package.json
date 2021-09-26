@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-reporting-protobuf",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "Protobuf format for Apollo usage reporting",
   "main": "generated/index.js",
   "types": "generated/index.d.ts",
