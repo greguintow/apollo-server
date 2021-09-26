@@ -40,7 +40,7 @@ export {
 } from 'apollo-server-types';
 
 // This currently provides the ability to have syntax highlighting as well as
-// consistency between client and server gql tags
+// consistency between client and server gql tag
 import type { DocumentNode } from 'graphql';
 import gqlTag from 'graphql-tag';
 export const gql: (
