@@ -1,40 +1,40 @@
 {
-	"name": "@greguintow/apollo-server-azure-functions",
-	"version": "3.4.2",
-	"description": " greguintow Production-ready Node.js GraphQL server for Azure Functions",
-	"keywords": [
-		"GraphQL",
-		"Apollo",
-		"Server",
-		"Azure",
-		"Javascript"
-	],
-	"author": "Apollo <opensource@apollographql.com>",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/apollographql/apollo-server",
-		"directory": "packages/apollo-server-azure-functions"
-	},
-	"homepage": "https://github.com/apollographql/apollo-server#readme",
-	"bugs": {
-		"url": "https://github.com/apollographql/apollo-server/issues"
-	},
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"engines": {
-		"node": ">=12.0"
-	},
-	"dependencies": {
-		"@azure/functions": "1.2.3",
-		"apollo-server-core": "file:../apollo-server-core",
-		"apollo-server-env": "file:../apollo-server-env",
-		"apollo-server-types": "file:../apollo-server-types"
-	},
-	"devDependencies": {
-		"apollo-server-integration-testsuite": "file:../apollo-server-integration-testsuite"
-	},
-	"peerDependencies": {
-		"graphql": "^15.3.0"
-	}
+  "name": "@greguintow/apollo-server-azure-functions",
+  "version": "3.4.2",
+  "description": "Production-ready Node.js GraphQL server for Azure Functions",
+  "keywords": [
+    "GraphQL",
+    "Apollo",
+    "Server",
+    "Azure",
+    "Javascript"
+  ],
+  "author": "Apollo <opensource@apollographql.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apollographql/apollo-server",
+    "directory": "packages/apollo-server-azure-functions"
+  },
+  "homepage": "https://github.com/apollographql/apollo-server#readme",
+  "bugs": {
+    "url": "https://github.com/apollographql/apollo-server/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=12.0"
+  },
+  "dependencies": {
+    "@azure/functions": "1.2.3",
+    "apollo-server-core": "file:../apollo-server-core",
+    "apollo-server-env": "file:../apollo-server-env",
+    "apollo-server-types": "file:../apollo-server-types"
+  },
+  "devDependencies": {
+    "apollo-server-integration-testsuite": "file:../apollo-server-integration-testsuite"
+  },
+  "peerDependencies": {
+    "graphql": "^15.3.0"
+  }
 }
