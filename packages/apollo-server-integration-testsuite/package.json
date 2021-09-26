@@ -2,7 +2,7 @@
   "name": "@greguintow/apollo-server-integration-testsuite",
   "private": true,
   "version": "3.4.6",
-  "description": "Apollo Server Integrations testsuite",
+  "description": "greguintow Apollo Server Integrations testsuite",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {

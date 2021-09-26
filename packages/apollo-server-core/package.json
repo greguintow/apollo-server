@@ -1,7 +1,7 @@
 {
   "name": "@greguintow/apollo-server-core",
   "version": "3.4.7",
-  "description": "Core engine for Apollo GraphQL server",
+  "description": "greguintow Core engine for Apollo GraphQL server",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {

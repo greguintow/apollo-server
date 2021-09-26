@@ -1,7 +1,7 @@
 {
   "name": "@greguintow/apollo-server-cloudflare",
   "version": "3.4.6",
-  "description": "Production-ready Node.js GraphQL server for Cloudflare workers",
+  "description": "greguintow Production-ready Node.js GraphQL server for Cloudflare workers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
