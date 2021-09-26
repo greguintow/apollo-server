@@ -1,5 +1,5 @@
 {
-  "name": "apollo-server-cache-memcached",
+  "name": "@greguintow/apollo-server-cache-memcached",
   "version": "3.2.0",
   "author": "Apollo <opensource@apollographql.com>",
   "license": "MIT",
