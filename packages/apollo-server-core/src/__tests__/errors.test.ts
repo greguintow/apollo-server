@@ -34,38 +34,40 @@ describe('Errors', () => {
       | ((
           options: Record<string, any>,
           errors: Error[],
-        ) => Record<string, any>[])
-      | ((options?: Record<string, any>) => Record<string, any>);
+        ) => Promise<Record<string, any>[]>)
+      | ((options?: Record<string, any>) => Promise<Record<string, any>>);
     const message = 'message';
     const code = 'CODE';
     const key = 'value';
 
-    const createFormattedError: CreateFormatError = (
+    const createFormattedError: CreateFormatError = async (
       options?: Record<string, any>,
       errors?: Error[],
     ) => {
       if (errors === undefined) {
         const error = new ApolloError(message, code, { key });
-        return formatApolloErrors(
-          [
-            new GraphQLError(
-              error.message,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              error,
-            ),
-          ],
-          options,
+        return (
+          await formatApolloErrors(
+            [
+              new GraphQLError(
+                error.message,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                error,
+              ),
+            ],
+            options,
+          )
         )[0];
       } else {
         return formatApolloErrors(errors, options);
       }
     };
 
-    it('exposes a stacktrace in debug mode', () => {
-      const error = createFormattedError({ debug: true });
+    it('exposes a stacktrace in debug mode', async () => {
+      const error = await createFormattedError({ debug: true });
       expect(error.message).toEqual(message);
       expect(error.extensions.key).toEqual(key);
       expect(error.extensions.exception.key).toBeUndefined();
@@ -73,36 +75,38 @@ describe('Errors', () => {
       // stacktrace should exist under exception
       expect(error.extensions.exception.stacktrace).toBeDefined();
     });
-    it('hides stacktrace by default', () => {
+    it('hides stacktrace by default', async () => {
       const thrown = new Error(message);
       (thrown as any).key = key;
-      const error = formatApolloErrors([
-        new GraphQLError(
-          thrown.message,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          thrown,
-        ),
-      ])[0];
+      const error = (
+        await formatApolloErrors([
+          new GraphQLError(
+            thrown.message,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            thrown,
+          ),
+        ])
+      )[0];
       expect(error.message).toEqual(message);
       expect(error.extensions.code).toEqual('INTERNAL_SERVER_ERROR');
       expect(error.extensions.exception.key).toEqual(key);
       // stacktrace should exist under exception
       expect(error.extensions.exception.stacktrace).toBeUndefined();
     });
-    it('exposes fields on error under exception field and provides code', () => {
-      const error = createFormattedError();
+    it('exposes fields on error under exception field and provides code', async () => {
+      const error = await createFormattedError();
       expect(error.message).toEqual(message);
       expect(error.extensions.key).toEqual(key);
       expect(error.extensions.exception).toBeUndefined();
       expect(error.extensions.code).toEqual(code);
     });
-    it('calls formatter after exposing the code and stacktrace', () => {
+    it('calls formatter after exposing the code and stacktrace', async () => {
       const error = new ApolloError(message, code, { key });
       const formatter = jest.fn();
-      formatApolloErrors([error], {
+      await formatApolloErrors([error], {
         formatter,
         debug: true,
       });
@@ -113,9 +117,9 @@ describe('Errors', () => {
       expect(error instanceof ApolloError).toBe(true);
       expect(formatter).toHaveBeenCalledTimes(1);
     });
-    it('Formats native Errors in a JSON-compatible way', () => {
+    it('Formats native Errors in a JSON-compatible way', async () => {
       const error = new Error('Hello');
-      const [formattedError] = formatApolloErrors([error]);
+      const [formattedError] = await formatApolloErrors([error]);
       expect(JSON.parse(JSON.stringify(formattedError)).message).toBe('Hello');
     });
   });
@@ -164,7 +168,7 @@ describe('Errors', () => {
         name: 'ValidationError',
       });
     });
-    it('provides a user input error', () => {
+    it('provides a user input error', async () => {
       const error = new UserInputError(message, {
         field1: 'property1',
         field2: 'property2',
@@ -175,16 +179,18 @@ describe('Errors', () => {
         name: 'UserInputError',
       });
 
-      const formattedError = formatApolloErrors([
-        new GraphQLError(
-          error.message,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          error,
-        ),
-      ])[0];
+      const formattedError = (
+        await formatApolloErrors([
+          new GraphQLError(
+            error.message,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            error,
+          ),
+        ])
+      )[0];
 
       expect(formattedError.extensions.field1).toEqual('property1');
       expect(formattedError.extensions.field2).toEqual('property2');

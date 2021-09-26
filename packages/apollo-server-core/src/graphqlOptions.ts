@@ -41,7 +41,10 @@ export interface GraphQLServerOptions<
   schema: GraphQLSchema;
   schemaHash: SchemaHash;
   logger?: Logger;
-  formatError?: (error: GraphQLError) => GraphQLFormattedError;
+  formatError?: (
+    error: GraphQLError,
+    requestContext?: GraphQLRequestContext<TContext>,
+  ) => GraphQLFormattedError | Promise<GraphQLFormattedError>;
   rootValue?: ((parsedQuery: DocumentNode) => TRootValue) | TRootValue;
   context?: TContext | (() => never);
   validationRules?: Array<(context: ValidationContext) => any>;
@@ -49,7 +52,7 @@ export interface GraphQLServerOptions<
   formatResponse?: (
     response: GraphQLResponse,
     requestContext: GraphQLRequestContext<TContext>,
-  ) => GraphQLResponse | null;
+  ) => GraphQLResponse | null | Promise<GraphQLResponse | null>;
   fieldResolver?: GraphQLFieldResolver<any, TContext>;
   debug?: boolean;
   dataSources?: () => DataSources<TContext>;

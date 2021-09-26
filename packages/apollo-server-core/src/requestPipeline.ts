@@ -83,11 +83,14 @@ export interface GraphQLRequestPipelineConfig<TContext> {
 
   persistedQueries?: PersistedQueryOptions;
 
-  formatError?: (error: GraphQLError) => GraphQLFormattedError;
+  formatError?: (
+    error: GraphQLError,
+    requestContext?: GraphQLRequestContext<TContext>,
+  ) => GraphQLFormattedError | Promise<GraphQLFormattedError>;
   formatResponse?: (
     response: GraphQLResponse,
     requestContext: GraphQLRequestContext<TContext>,
-  ) => GraphQLResponse | null;
+  ) => GraphQLResponse | null | Promise<GraphQLResponse | null>;
 
   plugins?: ApolloServerPlugin[];
   documentStore?: InMemoryLRUCache<DocumentNode>;
@@ -421,7 +424,7 @@ export async function processGraphQLRequest<TContext>(
 
       response = {
         ...result,
-        errors: resultErrors ? formatErrors(resultErrors) : undefined,
+        errors: resultErrors ? await formatErrors(resultErrors) : undefined,
       };
 
       await executionDispatcher.invokeHook('executionDidEnd');
@@ -437,10 +440,8 @@ export async function processGraphQLRequest<TContext>(
   }
 
   if (config.formatResponse) {
-    const formattedResponse: GraphQLResponse | null = config.formatResponse(
-      response,
-      requestContext,
-    );
+    const formattedResponse: GraphQLResponse | null =
+      await config.formatResponse(response, requestContext);
     if (formattedResponse != null) {
       response = formattedResponse;
     }
@@ -541,7 +542,7 @@ export async function processGraphQLRequest<TContext>(
     await didEncounterErrors(errors);
 
     const response: GraphQLResponse = {
-      errors: formatErrors(
+      errors: await formatErrors(
         errors.map((err) =>
           err instanceof ApolloError && !errorClass
             ? err
@@ -582,11 +583,12 @@ export async function processGraphQLRequest<TContext>(
     return sendResponse(response);
   }
 
-  function formatErrors(
+  async function formatErrors(
     errors: ReadonlyArray<GraphQLError>,
-  ): ReadonlyArray<GraphQLFormattedError> {
+  ): Promise<ReadonlyArray<GraphQLFormattedError>> {
     return formatApolloErrors(errors, {
       formatter: config.formatError,
+      requestContext,
       debug: requestContext.debug,
     });
   }
