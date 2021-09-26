@@ -1,7 +1,7 @@
 {
   "name": "@greguintow/apollo-server-micro",
   "version": "3.4.1",
-  "description": "Production-ready Node.js GraphQL server for Micro",
+  "description": " greguintow Production-ready Node.js GraphQL server for Micro",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
