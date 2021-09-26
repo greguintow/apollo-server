@@ -1,7 +1,7 @@
 {
   "name": "@greguintow/apollo-server-plugin-base",
-  "version": "3.3.4",
-  "description": "greguintow Apollo Server plugin base classes",
+  "version": "3.3.3",
+  "description": "Apollo Server plugin base classes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [],
