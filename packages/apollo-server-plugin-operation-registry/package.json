@@ -1,7 +1,7 @@
 {
   "name": "@greguintow/apollo-server-plugin-operation-registry",
-  "version": "3.3.3",
-  "description": "Apollo Server operation registry",
+  "version": "3.3.2",
+  "description": "greguintow Apollo Server operation registry",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [],
