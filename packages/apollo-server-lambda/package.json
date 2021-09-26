@@ -1,5 +1,5 @@
 {
-  "name": "@greguintow/apollo-server-lambda",
+  "name": "apollo-server-lambda",
   "version": "3.4.1",
   "description": "Production-ready Node.js GraphQL server for AWS Lambda",
   "keywords": [

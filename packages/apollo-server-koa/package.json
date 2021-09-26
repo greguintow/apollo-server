@@ -1,5 +1,5 @@
 {
-  "name": "@greguintow/apollo-server-koa",
+  "name": "apollo-server-koa",
   "version": "3.4.1",
   "description": "Production-ready Node.js GraphQL server for Koa",
   "main": "dist/index.js",

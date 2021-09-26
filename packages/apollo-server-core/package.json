@@ -1,5 +1,5 @@
 {
-  "name": "@greguintow/apollo-server-core",
+  "name": "apollo-server-core",
   "version": "3.4.2",
   "description": "Core engine for Apollo GraphQL server",
   "main": "dist/index.js",
@@ -49,5 +49,6 @@
   },
   "peerDependencies": {
     "graphql": "^15.3.0"
-  }
+  },
+  "gitHead": "c1725518e9824aed0b9e258b6ffbf7056217c995"
 }

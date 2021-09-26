@@ -1,5 +1,5 @@
 {
-  "name": "@greguintow/apollo-server-plugin-response-cache",
+  "name": "apollo-server-plugin-response-cache",
   "version": "3.3.1",
   "description": "Apollo Server full query response cache",
   "main": "dist/index.js",
