@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-server",
-  "version": "3.4.6",
+  "version": "3.4.7",
   "description": "greguintow Production ready GraphQL Server",
   "author": "Apollo <opensource@apollographql.com>",
   "main": "dist/index.js",
