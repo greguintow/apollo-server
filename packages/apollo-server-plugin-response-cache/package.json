@@ -1,7 +1,7 @@
 {
   "name": "@greguintow/apollo-server-plugin-response-cache",
   "version": "3.3.3",
-  "description": "greguintow Apollo Server full query response cache",
+  "description": "Apollo Server full query response cache",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
