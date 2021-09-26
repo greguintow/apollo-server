@@ -1,5 +1,5 @@
 {
-  "name": "apollo-server-env",
+  "name": "@greguintow/apollo-server-env",
   "version": "4.0.4",
   "author": "Apollo <opensource@apollographql.com>",
   "license": "MIT",

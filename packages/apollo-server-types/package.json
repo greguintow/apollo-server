@@ -1,5 +1,5 @@
 {
-  "name": "apollo-server-types",
+  "name": "@greguintow/apollo-server-types",
   "version": "3.3.1",
   "description": "Apollo Server shared types",
   "main": "dist/index.js",

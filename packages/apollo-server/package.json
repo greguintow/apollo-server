@@ -1,5 +1,5 @@
 {
-  "name": "apollo-server",
+  "name": "@greguintow/apollo-server",
   "version": "3.4.1",
   "description": "Production ready GraphQL Server",
   "author": "Apollo <opensource@apollographql.com>",

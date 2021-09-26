@@ -1,5 +1,5 @@
 {
-  "name": "apollo-server-errors",
+  "name": "@greguintow/apollo-server-errors",
   "version": "3.2.1",
   "author": "Apollo <opensource@apollographql.com>",
   "license": "MIT",
