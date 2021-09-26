@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-datasource-rest",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "author": "Apollo <opensource@apollographql.com>",
   "license": "MIT",
   "repository": {
@@ -18,13 +18,13 @@
     "node": ">=12.0"
   },
   "dependencies": {
-    "apollo-datasource": "file:../apollo-datasource",
-    "apollo-server-caching": "file:../apollo-server-caching",
-    "apollo-server-env": "file:../apollo-server-env",
-    "apollo-server-errors": "file:../apollo-server-errors",
+    "apollo-datasource": "npm:@greguintow/apollo-datasource",
+    "apollo-server-caching": "npm:@greguintow/apollo-server-caching",
+    "apollo-server-env": "npm:@greguintow/apollo-server-env",
+    "apollo-server-errors": "npm:@greguintow/apollo-server-errors",
     "http-cache-semantics": "^4.1.0"
   },
   "devDependencies": {
-    "apollo-server-types": "file:../apollo-server-types"
+    "apollo-server-types": "npm:@greguintow/apollo-server-types"
   }
 }

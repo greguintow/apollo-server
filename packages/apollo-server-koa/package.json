@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-server-koa",
-  "version": "3.4.5",
+  "version": "3.4.6",
   "description": "Production-ready Node.js GraphQL server for Koa",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,13 +33,13 @@
     "@types/koa-compose": "^3.2.5",
     "@types/koa__cors": "^3.0.1",
     "accepts": "^1.3.7",
-    "apollo-server-core": "file:../apollo-server-core",
-    "apollo-server-types": "file:../apollo-server-types",
+    "apollo-server-core": "npm:@greguintow/apollo-server-core",
+    "apollo-server-types": "npm:@greguintow/apollo-server-types",
     "koa-bodyparser": "^4.3.0",
     "koa-compose": "^4.1.0"
   },
   "devDependencies": {
-    "apollo-server-integration-testsuite": "file:../apollo-server-integration-testsuite"
+    "apollo-server-integration-testsuite": "npm:@greguintow/apollo-server-integration-testsuite"
   },
   "peerDependencies": {
     "graphql": "^15.3.0",

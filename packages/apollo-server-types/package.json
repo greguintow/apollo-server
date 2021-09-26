@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-server-types",
-  "version": "3.3.5",
+  "version": "3.3.6",
   "description": "Apollo Server shared types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,9 +11,9 @@
     "node": ">=12.0"
   },
   "dependencies": {
-    "apollo-reporting-protobuf": "file:../apollo-reporting-protobuf",
-    "apollo-server-caching": "file:../apollo-server-caching",
-    "apollo-server-env": "file:../apollo-server-env"
+    "apollo-reporting-protobuf": "npm:@greguintow/apollo-reporting-protobuf",
+    "apollo-server-caching": "npm:@greguintow/apollo-server-caching",
+    "apollo-server-env": "npm:@greguintow/apollo-server-env"
   },
   "peerDependencies": {
     "graphql": "^15.3.0"

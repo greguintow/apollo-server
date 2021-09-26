@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-datasource",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "author": "Apollo <opensource@apollographql.com>",
   "license": "MIT",
   "repository": {
@@ -18,7 +18,7 @@
     "node": ">=12.0"
   },
   "dependencies": {
-    "apollo-server-caching": "file:../apollo-server-caching",
-    "apollo-server-env": "file:../apollo-server-env"
+    "apollo-server-caching": "npm:@greguintow/apollo-server-caching",
+    "apollo-server-env": "npm:@greguintow/apollo-server-env"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-server-fastify",
-  "version": "3.4.5",
+  "version": "3.4.6",
   "description": "Production-ready Node.js GraphQL server for Fastify",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,14 +26,14 @@
     "node": ">=12.0"
   },
   "dependencies": {
-    "apollo-server-core": "file:../apollo-server-core",
-    "apollo-server-types": "file:../apollo-server-types",
+    "apollo-server-core": "npm:@greguintow/apollo-server-core",
+    "apollo-server-types": "npm:@greguintow/apollo-server-types",
     "fast-json-stringify": "^2.7.6",
     "fastify-accepts": "^2.0.1",
     "fastify-cors": "^6.0.0"
   },
   "devDependencies": {
-    "apollo-server-integration-testsuite": "file:../apollo-server-integration-testsuite"
+    "apollo-server-integration-testsuite": "npm:@greguintow/apollo-server-integration-testsuite"
   },
   "peerDependencies": {
     "fastify": "^3.17.0",

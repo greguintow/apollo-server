@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-server-plugin-base",
-  "version": "3.3.3",
+  "version": "3.3.4",
   "description": "Apollo Server plugin base classes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
     "node": ">=12.0"
   },
   "dependencies": {
-    "apollo-server-types": "file:../apollo-server-types"
+    "apollo-server-types": "npm:@greguintow/apollo-server-types"
   },
   "peerDependencies": {
     "graphql": "^15.3.0"

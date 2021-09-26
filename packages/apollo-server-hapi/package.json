@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-server-hapi",
-  "version": "3.4.5",
+  "version": "3.4.6",
   "description": "Production-ready Node.js GraphQL server for Hapi",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,11 +28,11 @@
   "dependencies": {
     "@hapi/accept": "^5.0.2",
     "@hapi/boom": "^9.1.2",
-    "apollo-server-core": "file:../apollo-server-core",
-    "apollo-server-types": "file:../apollo-server-types"
+    "apollo-server-core": "npm:@greguintow/apollo-server-core",
+    "apollo-server-types": "npm:@greguintow/apollo-server-types"
   },
   "devDependencies": {
-    "apollo-server-integration-testsuite": "file:../apollo-server-integration-testsuite"
+    "apollo-server-integration-testsuite": "npm:@greguintow/apollo-server-integration-testsuite"
   },
   "peerDependencies": {
     "@hapi/hapi": "^20.1.2",

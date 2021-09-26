@@ -1,6 +1,6 @@
 {
   "name": "@greguintow/apollo-server-plugin-operation-registry",
-  "version": "3.3.3",
+  "version": "3.3.4",
   "description": "Apollo Server operation registry",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,10 +17,10 @@
   },
   "dependencies": {
     "apollo-graphql": "0.9.3",
-    "apollo-server-caching": "file:../apollo-server-caching",
-    "apollo-server-env": "file:../apollo-server-env",
-    "apollo-server-errors": "file:../apollo-server-errors",
-    "apollo-server-plugin-base": "file:../apollo-server-plugin-base",
+    "apollo-server-caching": "npm:@greguintow/apollo-server-caching",
+    "apollo-server-env": "npm:@greguintow/apollo-server-env",
+    "apollo-server-errors": "npm:@greguintow/apollo-server-errors",
+    "apollo-server-plugin-base": "npm:@greguintow/apollo-server-plugin-base",
     "fast-json-stable-stringify": "^2.1.0",
     "loglevel": "^1.6.8",
     "make-fetch-happen": "^8.0.9"
